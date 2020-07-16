@@ -3,7 +3,7 @@
 import HomePage from '../integration/PageObject/HomePage'
 import SignIn from '../integration/PageObject/SignInPage'
 
-Cypress.Commands.add("loginvalid", (email, password, message) => {
+Cypress.Commands.add("loginvalid", (email, password, phoneHide, emailHide) => {
         const home = new HomePage()
         const signIn = new SignIn()
         home.visit()
@@ -12,17 +12,8 @@ Cypress.Commands.add("loginvalid", (email, password, message) => {
         signIn.continueButton()
         signIn.enterPassword(password)
         signIn.signinButton()
-        signIn.authenMess(message)
+        signIn.phoneHide(phoneHide)
+        signIn.emailHide(emailHide)
+        
 })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+

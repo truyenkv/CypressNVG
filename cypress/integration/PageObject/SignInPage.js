@@ -28,9 +28,21 @@ class SignInPage {
     }
 
     //Message at authen 
-    authenMess(message){
-        const messageLoca = cy.get('span.a-size-medium.transaction-approval-word-break.a-text-bold')
-        messageLoca.should('have.text', message)
+    // authenMess(message){
+    //     const messageLoca = cy.get('span.a-size-medium.transaction-approval-word-break.a-text-bold')
+    //     messageLoca.should('have.text', message)
+    // }
+
+    //show hide number phone
+    phoneHide(phone){
+        const phoneLocator = cy.xpath('//div[contains(text(),"Mobile")]/following-sibling::div')
+        phoneLocator.should('contain.text', phone)
+    }
+
+    //show hide email 
+    emailHide(email){
+        const emailLocator = cy.xpath('//div[contains(text(),"Email")]/following-sibling::div')
+        emailLocator.should('contain.text', email)
     }
 }
 
