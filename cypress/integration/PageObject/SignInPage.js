@@ -26,6 +26,12 @@ class SignInPage {
         const signinBtn = cy.get('#signInSubmit')
         signinBtn.click()
     }
+
+    //Message at authen 
+    authenMess(message){
+        const messageLoca = cy.get('span.a-size-medium.transaction-approval-word-break.a-text-bold')
+        messageLoca.should('have.text', message)
+    }
 }
 
 export default SignInPage
