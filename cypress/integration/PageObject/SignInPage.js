@@ -44,6 +44,12 @@ class SignInPage {
         const emailLocator = cy.xpath('//div[contains(text(),"Email")]/following-sibling::div')
         emailLocator.should('contain.text', email)
     }
+
+    //get the warning message when invalid email
+    warningMessage(mess){
+        const warning = cy.get('.a-list-item')
+        warning.should('contain.text', mess)
+    }
 }
 
 export default SignInPage

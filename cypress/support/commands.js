@@ -17,3 +17,13 @@ Cypress.Commands.add("loginvalid", (email, password, phoneHide, emailHide) => {
         
 })
 
+Cypress.Commands.add("loginemailinvalid", (email, message)=> {
+        const home = new HomePage()
+        const signIn = new SignIn()
+        home.visit()
+        home.openSignInPage()
+        signIn.enterEmail(email)
+        signIn.continueButton()
+        signIn.warningMessage(message)
+})
+

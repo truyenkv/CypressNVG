@@ -1,0 +1,23 @@
+[
+    {
+        "email": "truyen",
+        "messageWarning": "We cannot find an account with that email address"
+    },
+    {
+        "email": "truyen.yopmail.com",
+        "messageWarning": "We cannot find an account with that email address"
+    },
+    {
+        "email": "truyen@@yopmail.com",
+        "messageWarning": "We cannot find an account with that email address"
+    },
+    {
+        "email": "truyen@yopmail",
+        "messageWarning": "We cannot find an account with that email address"
+    },
+    {
+        "email": "notexistedaccount@yopmail.com",
+        "messageWarning": "We cannot find an account with that email address"
+    }
+
+]
