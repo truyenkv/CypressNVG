@@ -2,9 +2,9 @@
 
 describe('Verify login', () => {
     
-    // it('Login valid account', () =>{
-    //     cy.loginvalid('kieuvantruyen.3dfish@gmail.com', 'Aa123456', '***-***-**53', 'k******@gmail.com')
-    // })
+    it('Login valid account', () =>{
+        cy.loginvalid('kieuvantruyen.3dfish@gmail.com', 'Aa123456', '***-***-**53', 'k******@gmail.com')
+    })
 
     it('verify warning message when input invalid email', () => {
         cy.fixture('invalidEmail').then( emailtest => {
@@ -14,5 +14,9 @@ describe('Verify login', () => {
                 cy.loginemailinvalid(email, messageWarning)
             });
         })
+    })
+
+    it('verify warning message when input invalid email', () => {
+        cy.loginpasswordinvalid('kieuvantruyen.3dfish@gmail.com', 'zzzzzz', 'Your password is incorrect')
     })
 })
