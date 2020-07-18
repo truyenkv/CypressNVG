@@ -27,12 +27,6 @@ class SignInPage {
         signinBtn.click()
     }
 
-    //Message at authen 
-    // authenMess(message){
-    //     const messageLoca = cy.get('span.a-size-medium.transaction-approval-word-break.a-text-bold')
-    //     messageLoca.should('have.text', message)
-    // }
-
     //show hide number phone
     phoneHide(phone){
         const phoneLocator = cy.xpath('//div[contains(text(),"Mobile")]/following-sibling::div')

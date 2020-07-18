@@ -16,7 +16,7 @@ describe('Verify login', () => {
         })
     })
 
-    it('verify warning message when input invalid email', () => {
+    it('verify warning message when input incorrect password', () => {
         cy.loginpasswordinvalid('kieuvantruyen.3dfish@gmail.com', 'zzzzzz', 'Your password is incorrect')
     })
 })

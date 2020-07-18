@@ -12,5 +12,21 @@ class HomePage {
         signBtn.click()
     }
 
+    searchDepartment(department){
+        const departmentLocator = cy.get('#searchDropdownBox')
+        departmentLocator.select(department, {force: true})
+        return this
+    }
+
+    enterSearchField(value){
+        const searchFielLocator = cy.get('#twotabsearchtextbox')
+        searchFielLocator.type(value)
+        return this
+    }
+
+    searchButton(){
+        const searchBtn = cy.xpath("//input[@value='Go']")
+        searchBtn.click()
+    }
 }
 export default HomePage
