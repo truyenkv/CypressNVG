@@ -10,6 +10,6 @@ describe('Verify search funtion', ()=>{
         home.enterSearchField('apple')
         home.searchButton()
         home.englishCheckBox('yes') //input yes for check condion
-        
+        home.checkProductInList('Ten Apples Up On Top!')
     })
 })

@@ -37,6 +37,12 @@ class HomePage {
         
     }
 
+    checkProductInList(product){
+        product = '"'+product+'"'
+        const locator ='//*[contains(text(),'+product+')]'
+        cy.xpath(locator).should('be.visible')
+    }
+
     
 }
 export default HomePage
