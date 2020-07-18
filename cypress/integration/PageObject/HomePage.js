@@ -28,5 +28,15 @@ class HomePage {
         const searchBtn = cy.xpath("//input[@value='Go']")
         searchBtn.click()
     }
+
+    englishCheckBox(condition){
+        const eng = cy.xpath('//span[contains(text(),"English")]/preceding-sibling::div/label/input')
+        if(condition=='yes'){
+            eng.check({force:true})
+        }
+        
+    }
+
+    
 }
 export default HomePage

@@ -9,5 +9,7 @@ describe('Verify search funtion', ()=>{
         home.searchDepartment('Books')
         home.enterSearchField('apple')
         home.searchButton()
+        home.englishCheckBox('yes') //input yes for check condion
+        
     })
 })
