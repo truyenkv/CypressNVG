@@ -57,7 +57,7 @@ class HomePage {
     //check how many page in search result
     checkPagination(expectPage, itemNumber){
         cy.get('.a-last').prev().invoke('text').then(parseInt).should('be.equal', expectPage)
-        for (var i = 0; i < expectPage; i++) {
+        for (var i = 1; i < expectPage-1; i++) {
             cy.get('.a-last').click()
             cy.wait(2000)
             this.listItemInEachPage(itemNumber)

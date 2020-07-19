@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import HomePage from '../PageObject/HomePage'
-import _ from 'lodash'
+
 
 
 
@@ -23,9 +23,9 @@ describe('Verify search funtion', ()=>{
 
     it ('Verify pagination', ()=>{
         const home = new HomePage()
-        cy.searchwithcondition('Books', 'apple')
+        cy.searchwithcondition('Books', 'cameron judd')
         home.englishCheckBox('yes') //input yes for check condion
-        home.checkPagination(75, 16) //Search Result: has x page, one page has y item
+        home.checkPagination(5, 16) //Search Result: has x page, one page has y item
        
     })
 })
