@@ -37,5 +37,12 @@ Cypress.Commands.add("loginpasswordinvalid", (email, pass, message)=> {
         signIn.enterPassword(pass)
         signIn.signinButton()
         signIn.warningMessage(message)
+})
 
+Cypress.Commands.add("searchwithcondition", (deparment, value) => {
+        const home = new HomePage()
+        home.visit()
+        home.searchDepartment(deparment)
+        home.enterSearchField(value)
+        home.searchButton()
 })
