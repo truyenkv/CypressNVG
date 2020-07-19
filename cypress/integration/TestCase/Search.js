@@ -28,4 +28,12 @@ describe('Verify search funtion', ()=>{
         home.checkPagination(5, 16) //Search Result: has x page, one page has y item
        
     })
+
+    it ('Verify Sorting by Publish Date', ()=>{
+        const home = new HomePage()
+        cy.searchwithcondition('Books', 'apple')
+        home.englishCheckBox('yes') //input yes for check condion
+        home.sortOption('Publication Date')
+       
+    })
 })

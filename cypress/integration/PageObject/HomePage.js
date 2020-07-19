@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+
+
 class HomePage {
     
     //open the url of home page
@@ -64,6 +67,11 @@ class HomePage {
         }
     }
 
-    
+    sortOption(option){
+        option = '"'+option+'"'
+        cy.get('#a-autoid-0-announce').click()
+        const locator = '//li/a[contains(text(),'+option+')]'
+        cy.xpath(locator).click()
+    }
 }
 export default HomePage
