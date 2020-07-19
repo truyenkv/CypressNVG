@@ -49,15 +49,19 @@ class HomePage {
     }
 
     //check the number of item on the each page
-    listItemInSearch(number){
+    listItemInEachPage(number){
         const list = cy.xpath('//div[@data-component-type="s-search-result"]')
         list.should('have.length', number)
     }
     
     //check how many page in search result
-    numberPage(){
-        const lastPage = cy.get('.a-last').prev().invoke('text')
-        return lastPage
+    checkPagination(expectPage, itemNumber){
+        cy.get('.a-last').prev().invoke('text').then(parseInt).should('be.equal', expectPage)
+        for (var i = 0; i < expectPage; i++) {
+            cy.get('.a-last').click()
+            cy.wait(2000)
+            this.listItemInEachPage(itemNumber)
+        }
     }
 
     
