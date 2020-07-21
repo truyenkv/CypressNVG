@@ -73,5 +73,16 @@ class HomePage {
         const locator = '//li/a[contains(text(),'+option+')]'
         cy.xpath(locator).click()
     }
+
+    dateTimeProduct(){
+        var date = []
+        cy.get('.a-size-base.a-color-secondary.a-text-normal')
+        .each($el => {
+            const text = $el.text()
+            date.push(text) })
+            .then(() => {
+                cy.log(date.toString()) 
+            })
+    }
 }
 export default HomePage
