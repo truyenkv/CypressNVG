@@ -29,11 +29,11 @@ describe('Verify search funtion', ()=>{
        
     })
 
-    it ('Verify Sorting by Publish Date', ()=>{
-        const home = new HomePage()
-        cy.searchwithcondition('Books', 'apple')
-        home.englishCheckBox('yes') //input yes for check condion
-        home.sortOption('Publication Date')
+    // it ('Verify Sorting by Publish Date', ()=>{
+    //     const home = new HomePage()
+    //     cy.searchwithcondition('Books', 'apple')
+    //     home.englishCheckBox('yes') //input yes for check condion
+    //     home.sortOption('Publication Date')
        
-    })
+    // })
 })

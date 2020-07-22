@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import { expect } from "chai"
+
 
 
 class HomePage {
@@ -76,13 +78,25 @@ class HomePage {
 
     dateTimeProduct(){
         var date = []
-        cy.get('.a-size-base.a-color-secondary.a-text-normal')
-        .each($el => {
+        var dateex = []
+        let pagenumber = cy.get('.a-last').prev().invoke('text')
+        cy.xpath('//li[@class="a-last"]/preceding::li[1]').invoke('text').then(($page)=>{
+            cy.log(parseInt($page))
+            for(var i=0; i<parseInt($page); i++ ){
+                cy.get('.a-size-base.a-color-secondary.a-text-normal')
+            .each($el => {
             const text = $el.text()
-            date.push(text) })
+            var datetime = Date.parse(text)
+            date.push(datetime) })
             .then(() => {
-                cy.log(date.toString()) 
+                var datesort = date.sort((a,b) => {return b-a})
+                cy.log(datesort.toString()) 
+                expect(datesort).to.equal(date)
+                
             })
+            }
+        })
+        
     }
 }
 export default HomePage
