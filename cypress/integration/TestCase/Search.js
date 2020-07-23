@@ -23,17 +23,9 @@ describe('Verify search funtion', ()=>{
 
     it ('Verify pagination', ()=>{
         const home = new HomePage()
-        cy.searchwithcondition('Books', 'cameron judd')
+        cy.searchwithcondition('Books', 'apple')
         home.englishCheckBox('yes') //input yes for check condion
         home.checkPagination(5, 16) //Search Result: has x page, one page has y item
        
     })
-
-    // it ('Verify Sorting by Publish Date', ()=>{
-    //     const home = new HomePage()
-    //     cy.searchwithcondition('Books', 'apple')
-    //     home.englishCheckBox('yes') //input yes for check condion
-    //     home.sortOption('Publication Date')
-       
-    // })
 })
