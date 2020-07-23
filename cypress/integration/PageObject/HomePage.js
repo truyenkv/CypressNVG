@@ -88,10 +88,10 @@ class HomePage {
                 date.push(datetime)})
                 .then(() => {
                     cy.log(date.toString()) 
-                    // var datesort = date.sort()
                     var datesort = date.sort((a,b) => {return b-a})
                     cy.log(datesort.toString()) 
-                    expect(datesort).to.be.instanceOf(date)
+                    expect(date).to.deep.eq(datesort)
+    
                 })
                 cy.get('.a-last').click()
                 cy.wait(4000)
